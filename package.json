@@ -1,5 +1,5 @@
 {
-  "name": "my-package-martin-1",
+  "name": "my-simple-test-npm-package",
   "version": "1.0.0",
   "description": "my npm package",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "dev": "concurrently \"tsc --watch\" \"nodemon ./dist/index.js\"",
     "test": "jest"
   },
-  "author": "Martin Persson",
+  "author": "M",
   "license": "ISC",
   "dependencies": {
     "@types/jest": "^29.5.3",
