@@ -1,1 +1,37 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Проверить репозиторий
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Шаг 2: Установить Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  # Укажите версию Node.js, используемую в проекте
+          cache: 'npm'
+
+      # Шаг 3: Установить зависимости
+      - name: Install dependencies
+        run: npm ci
+
+      # Шаг 4: Проверить, что всё корректно
+      - name: Run tests
+        run: npm test
+
+      # Шаг 5: Опубликовать в NPM
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
