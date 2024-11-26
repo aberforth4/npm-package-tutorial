@@ -1,5 +1,5 @@
 {
-  "name": "@test-org111111/my-simple-test-npm-package-duplicated",
+  "name": "@test-org111111/my-simple-test-npm-package",
   "version": "2.0.4",
   "description": "my npm package",
   "main": "dist/index.js",
