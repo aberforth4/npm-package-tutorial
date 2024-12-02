@@ -1,6 +1,6 @@
 {
   "name": "@test-org111111/my-simple-test-npm-package",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "my npm package",
   "main": "dist/index.js",
   "scripts": {
