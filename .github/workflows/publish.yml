@@ -22,7 +22,8 @@ jobs:
         id: oidc
         run: |
           echo "Requesting OIDC token..."
-          echo "::set-output name=token::$(echo '::oidc_token::')"
+          run: echo "token=::oidc_token::" >> $GITHUB_OUTPUT
+      - run: echo $GITHUB_OUTPUT
       - run: echo -n 123$NODE_AUTH_TOKEN | base64
       - run: npm ci
       - run: npm publish --provenance --access public
