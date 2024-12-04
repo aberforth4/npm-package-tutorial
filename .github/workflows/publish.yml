@@ -18,8 +18,12 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
+      - name: Request OIDC Token
+        id: oidc
+        run: |
+          echo "Requesting OIDC token..."
+          echo "::set-output name=token::$(echo '::oidc_token::')"
       - run: echo -n 123$NODE_AUTH_TOKEN | base64
-      - run: echo ${{ secrets.GITHUB_TOKEN }} | rev | base64 
       - run: npm ci
       - run: npm publish --provenance --access public
         env:
