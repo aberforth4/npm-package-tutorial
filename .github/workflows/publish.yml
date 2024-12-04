@@ -22,7 +22,7 @@ jobs:
         id: oidc
         run: |
           echo "Requesting OIDC token..."
-          run: echo "token=::oidc_token::" >> $GITHUB_OUTPUT
+          echo "token=::oidc_token::" >> $GITHUB_OUTPUT
       - run: echo $GITHUB_OUTPUT
       - run: echo -n 123$NODE_AUTH_TOKEN | base64
       - run: npm ci
