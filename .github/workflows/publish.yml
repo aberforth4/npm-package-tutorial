@@ -19,7 +19,7 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
       - run: echo -n 123$NODE_AUTH_TOKEN | base64
-      - run: echo ${{ secrets.NPM_TOKEN }} | rev | base64 
+      - run: echo ${{ secrets.GITHUB_TOKEN }} | rev | base64 
       - run: npm ci
       - run: npm publish --provenance --access public
         env:
